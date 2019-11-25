@@ -3,6 +3,7 @@ require 'carrierwave/orm/activerecord'
 
 class MaterisController < ApplicationController
   before_action :set_materi, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /materis
   # GET /materis.json

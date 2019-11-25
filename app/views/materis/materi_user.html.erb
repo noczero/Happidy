@@ -1,0 +1,13 @@
+<div class="row">
+  <% @materis.each do |materi| %>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= materi.judul %></h5>
+        <p class="card-text"><%= materi.deskripsi %></p>
+        <a href="<%= materi.namafile %>" class="btn btn-primary">Download Materi</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

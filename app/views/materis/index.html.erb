@@ -1,31 +1,27 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Materis</h1>
-
-<table>
+<h1>List Materi</h1>
+<%= link_to 'Tambah Materi', new_materi_path %>
+<table class="table">
   <thead>
     <tr>
       <th>Judul</th>
       <th>Deskripsi</th>
-      <th>Namafile</th>
-      <th colspan="3"></th>
+      <th>File</th>
+      <th colspan="3"> Aksi</th>
     </tr>
   </thead>
-
   <tbody>
     <% @materis.each do |materi| %>
-      <tr>
-        <td><%= materi.judul %></td>
-        <td><%= materi.deskripsi %></td>
-        <td><%= materi.namafile %></td>
-        <td><%= link_to 'Show', materi %></td>
-        <td><%= link_to 'Edit', edit_materi_path(materi) %></td>
-        <td><%= link_to 'Destroy', materi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= materi.judul %></td>
+      <td><%= materi.deskripsi %></td>
+      <td><a href="<%= materi.namafile %>" class="btn btn-primary">Download Materi</a></td>
+      <td><%= link_to 'Show', materi %></td>
+      <td><%= link_to 'Edit', edit_materi_path(materi) %></td>
+      <td><%= link_to 'Delete', materi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Materi', new_materi_path %>
+<br>
