@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Judul:</strong>
+  <%= @materi.judul %>
+</p>
+
+<p>
+  <strong>Deskripsi:</strong>
+  <%= @materi.deskripsi %>
+</p>
+
+<p>
+  <strong>Namafile:</strong>
+  <%= @materi.namafile %>
+</p>
+
+<%= link_to 'Edit', edit_materi_path(@materi) %> |
+<%= link_to 'Back', materis_path %>

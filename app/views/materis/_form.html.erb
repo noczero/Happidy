@@ -1,0 +1,32 @@
+<%= form_with(model: materi, local: true,multipart: true) do |form| %>
+  <% if materi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(materi.errors.count, "error") %> prohibited this materi from being saved:</h2>
+
+      <ul>
+        <% materi.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :judul  %>
+    <%= form.text_field :judul , class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :deskripsi %>
+    <%= form.text_area :deskripsi , class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :"Upload file materi : " %>
+    <%= form.file_field  :namafile  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
