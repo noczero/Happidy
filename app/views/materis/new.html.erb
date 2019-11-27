@@ -2,9 +2,12 @@
 <div class="text-center">
 	<h1>Input Materi</h1>
 	<small>Silahkan isi form dengan benar!</small>
+
 </div>
 
-
 <%= render 'form', materi: @materi %>
+<div class="float-right">
+	
+	<%= link_to 'Kembali', materis_path, class:'btn btn-default ' %>
+</div>
 
-<%= link_to 'Back', materis_path %>

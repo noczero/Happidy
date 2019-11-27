@@ -8,10 +8,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<%= dashboard_path %>">Home <span class="sr-only">(current)</span></a>
       </li>
 
       <% if current_user %>
+        <% if current_user.admin %>
+          <li class="nav-item">
+              <a class="nav-link"  href="<%= materis_path %>" > Kelola Materi</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link"  href="<%= konfirmasi_pembayaran_path  %>" >Konfirmasi Pembayaran</a>
+          </li>
+        <% end %>
         <li class="nav-item">
             <a class="nav-link" data-method="delete" href="<%= destroy_user_session_path %>" >Log Out</a>
         </li>

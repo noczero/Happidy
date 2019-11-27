@@ -25,3 +25,21 @@ Things you may want to cover:
 
 
 File uploading pake carrierwave, https://github.com/carrierwaveuploader/carrierwave#activerecord
+
+Admin :
+admin@happidy.com
+admin1234
+
+Reset and rebuild db
+rails db:drop:_unsafe
+rails db:create
+rails db:migrate 
+
+Masuk rails console
+modif db
+@user = User.all
+@user.admin = true
+@user.save
+
+Notifikasi pake toasr
+https://medium.com/@hitobias/rails-6-%E4%BD%BF%E7%94%A8-toastr-%E4%BD%9C-flash-message-ab0fc75ee51b

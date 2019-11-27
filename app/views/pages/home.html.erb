@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-4">Selamat datang <%= current_user.name  %> </h1>
+  <p class="lead">Happidy adalah aplikasi berbasis web untuk para mahasiswa MBTI (Manajemen Bisnis Telekomunikasi dan Informatika) Telkom University</p>
+  <hr class="my-4">
+  <p> Mempermudah mahasiswa MBTI dalam mencari berbagai informasi terkait perkuliahan, seperti materi atau video tutorial dari berbagai mata kuliah sesuai dengan tingkatnya. </p>
+</div>
+
+
+
+<h1>Materi</h1>
+<hr>
+<p>Beberapa materi yang ada pada website kami, silahkan memilih materi dan download materi yang anda mau. </p>
+
+
+<div class="row">
+	<% @materis.each do |materi| %>
+	<div class="col-md-3">
+		<div class="card" style="margin-bottom: 20px">
+		  <div class="card-body">
+		    <h5 class="card-title"><%= materi.judul %></h5>
+		    <p class="card-text"><%= materi.deskripsi %></p>
+		    <a href="<%= materi.namafile %>" class="btn btn-primary">Download Materi</a>
+		  </div>
+		</div>
+	</div>
+	<% end %>
+		
+</div>

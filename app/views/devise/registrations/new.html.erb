@@ -5,17 +5,22 @@
 <small>Silahkan isi data diri dengan benar!</small>
 </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), multipart: true) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
   <div class="form-group">
     <%= f.label :"Nama Anda" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" ,class:"form-control" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" ,class:"form-control", :required => true %>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :"NIM Anda" %><br />
+    <%= f.text_field :nim, autofocus: true, autocomplete: "nim" ,class:"form-control", :required => true %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"form-control" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"form-control" ,:required => true %>
   </div>
 
   <div class="form-group">
@@ -23,12 +28,17 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> karakter minimal)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" ,class:"form-control" %>
+    <%= f.password_field :password, autocomplete: "new-password" ,class:"form-control", :required => true %>
   </div>
 
   <div class="form-group">
     <%= f.label :"Konfirmasi Password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class:"form-control" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class:"form-control", :required => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"Upload Bukti Pembayaran : " %>
+    <%= f.file_field  :bukti_pembayaran, :required => true  %>
   </div>
 
   <div class="text-center">

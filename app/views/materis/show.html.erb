@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Judul:</strong>
   <%= @materi.judul %>
@@ -11,9 +12,9 @@
 </p>
 
 <p>
-  <strong>Namafile:</strong>
-  <%= @materi.namafile %>
+  <strong>File : </strong>
+   <a href="<%= @materi.namafile %>"> Lihat</a>
 </p>
 
-<%= link_to 'Edit', edit_materi_path(@materi) %> |
-<%= link_to 'Back', materis_path %>
+<%= link_to 'Edit Materi', edit_materi_path(@materi), class:'btn btn-primary' %> 
+<%= link_to 'Kembali', materis_path, class:'btn btn-default' %>
